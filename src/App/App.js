@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import HomeContainer from '../HomeContainer/HomeContainer';
 import PlaylistContainer from '../PlaylistContainer/PlaylistContainer';
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,6 @@ class App extends Component {
           userName: ''
         },
       isLoggedIn: false,
-      playList: [],
       moods: ['Sad/Introspective', 'Happy/Energetic', 'Chill/Focused', 'Angry/Rebellious'],
       currentMood: '',
     }
@@ -29,6 +28,11 @@ class App extends Component {
     });
   };
 
+  setCurrentMood = (selectedMood) => {
+    this.setState({
+      currentMood: selectedMood
+    });
+  };
 
 
   render() {
@@ -40,12 +44,19 @@ class App extends Component {
           : <Redirect to = '/home'/>}
 
           <Route exact path='/home' >
-            <HomeContainer moods={this.state.moods} userInfo={this.state.userInfo} />
+            <HomeContainer setCurrentMood={this.setCurrentMood}
+                          moods={this.state.moods}
+                          userInfo={this.state.userInfo}
+                          />
           </Route>
 
-          <Route exact path='/home/:id/moods' >
-            <PlaylistContainer />
-          </Route>
+          <Route exact path='/home/:id/moods' render={({ match }) =>
+          <PlaylistContainer
+                            currentMood={this.state.currentMood}
+                            moodId={(parseInt(match.params.id))}
+                            />}
+
+                            />
 
           <Route exact path='/' >
             <LoginPage setUserInfo={this.setUserInfo} />
@@ -55,6 +66,3 @@ class App extends Component {
     )
   }
 }
-
-
-export default App;

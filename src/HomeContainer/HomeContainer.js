@@ -2,10 +2,10 @@ import React from 'react';
 import './HomeContainer.css';
 import HomeTabs from '../HomeTabs/HomeTabs';
 
-const HomeContainer = ({ moods, userInfo }) => {
+const HomeContainer = ({ setCurrentMood, moods, userInfo }) => {
   const homeTabs = moods.map((mood, index) => {
     return(
-      <HomeTabs key={index} mood={mood} index={index}/>
+      <HomeTabs key={index} setCurrentMood={setCurrentMood} mood={mood} index={index}/>
     )
   });
 
