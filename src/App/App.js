@@ -14,7 +14,7 @@ export default class App extends Component {
           userName: ''
         },
       isLoggedIn: false,
-      moods: ['Sad/Introspective', 'Happy/Energetic', 'Chill/Focused', 'Angry/Rebellious'],
+      moods: [{type: 'Sad/Introspective', id: 0 }, {type: 'Happy/Energetic', id: 1}, {type: 'Chill/Focused', id: 2}, {type: 'Angry/Rebellious', id: 3}],
       currentMood: '',
     }
   }
@@ -52,6 +52,7 @@ export default class App extends Component {
 
           <Route exact path='/home/:id/moods' render={({ match }) =>
           <PlaylistContainer
+                            allMoods={this.state.moods}
                             currentMood={this.state.currentMood}
                             moodId={(parseInt(match.params.id))}
                             />}
