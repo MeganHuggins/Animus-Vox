@@ -8,7 +8,6 @@ export default class OptionsPage extends Component {
     super(props);
     this.state = {
       currentMoodId: this.props.moodId,
-      fetchedPlayList: [],
       selectedOppositeMood: {
         id: null,
         statement: ''

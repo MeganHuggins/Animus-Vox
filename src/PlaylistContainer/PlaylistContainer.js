@@ -8,6 +8,7 @@ export default class PlaylistContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      fetchedPlayList: [],
       playlistId: this.props.playlistId,
     }
   }
@@ -16,7 +17,9 @@ export default class PlaylistContainer extends Component {
     const playlistId = this.state.playlistId
 
     fetchedPlayList(playlistId)
-      .then(data => console.log(data))
+      .then(data => this.setState({
+        fetchedPlayList: data
+      }))
       .catch(error => console.error(error));
   }
 
