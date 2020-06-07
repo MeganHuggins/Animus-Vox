@@ -4,7 +4,9 @@ import './App.css';
 import LoginPage from '../LoginPage/LoginPage';
 import Header from '../Header/Header';
 import HomeContainer from '../HomeContainer/HomeContainer';
+import OptionsPage from '../OptionsPage/OptionsPage';
 import PlaylistContainer from '../PlaylistContainer/PlaylistContainer';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -51,13 +53,20 @@ export default class App extends Component {
           </Route>
 
           <Route exact path='/home/:id/moods' render={({ match }) =>
-          <PlaylistContainer
-                            allMoods={this.state.moods}
-                            currentMood={this.state.currentMood}
-                            moodId={(parseInt(match.params.id))}
-                            />}
+            <OptionsPage
+                        allMoods={this.state.moods}
+                        currentMood={this.state.currentMood}
+                        moodId={(parseInt(match.params.id))}
+                        />}
 
-                            />
+                        />
+
+          <Route exact path='/home/playlist/:id/' render={({ match }) =>
+            <PlaylistContainer
+                        playlistId={(parseInt(match.params.id))}
+                        />}
+
+                        />
 
           <Route exact path='/' >
             <LoginPage setUserInfo={this.setUserInfo} />
