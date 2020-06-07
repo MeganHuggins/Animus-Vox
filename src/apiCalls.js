@@ -6,7 +6,5 @@ export const fetchedPlayList = async (id) => {
       "Target-URL": url
     }
   })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error))
+  return await response.json();
 }

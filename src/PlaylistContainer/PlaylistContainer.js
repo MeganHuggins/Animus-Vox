@@ -82,10 +82,8 @@ export default class PlaylistContainer extends Component {
   fetchPlaylist = (e) => {
     const slectedPlaylistId = e.target.id;
     fetchedPlayList(slectedPlaylistId)
-      .then((data) => {
-        this.fetchedPlayList = [data];
-      })
-      .catch(err => { console.error(err); });
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
   }
 
   backgroundImgFinder = (id) => {
