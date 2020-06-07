@@ -2,30 +2,53 @@ import React, { Component } from 'react';
 import './PlaylistContainer.css';
 import Header from '../Header/Header';
 import PlaylistCard from '../PlaylistCard/PlaylistCard';
-import { fetchedPlayList } from '../apiCalls';
+import { fetchPlayList } from '../apiCalls';
 
 export default class PlaylistContainer extends Component {
+  _isMounted = false;
+
   constructor(props) {
     super(props);
     this.state = {
-      fetchedPlayList: [],
+      playlist: [],
       playlistId: this.props.playlistId,
     }
   }
 
   componentDidMount = async () => {
+    this._isMounted = true;
+
     const playlistId = this.state.playlistId
 
-    fetchedPlayList(playlistId)
-      .then(data => this.setState({
-        fetchedPlayList: data
-      }))
+    fetchPlayList(playlistId)
+      .then(data => {
+        console.log('data', data);
+        const updatedPlaylist = data.map(song => {
+          const urlArray = song.eId.match(/(?<=#https:\/\/).*?(?=\/stream)/g);
+          return {
+            ...song,
+            url: urlArray
+          }
+        })
+        this.setState({ playlist: updatedPlaylist })
+      })
       .catch(error => console.error(error));
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
     return (
-      <h1>Hey</h1>
+      <>
+      <Header />
+      <section className='playlist-continer'>
+        {this.state.playlist.length &&
+          <PlaylistCard playlist={this.state.playlist}/>
+        }
+      </section>
+      </>
     )
   }
 }

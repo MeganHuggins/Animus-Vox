@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import LoginPage from '../LoginPage/LoginPage';
-import Header from '../Header/Header';
 import HomeContainer from '../HomeContainer/HomeContainer';
 import OptionsPage from '../OptionsPage/OptionsPage';
 import PlaylistContainer from '../PlaylistContainer/PlaylistContainer';
