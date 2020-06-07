@@ -4,7 +4,9 @@ import './App.css';
 import LoginPage from '../LoginPage/LoginPage';
 import Header from '../Header/Header';
 import HomeContainer from '../HomeContainer/HomeContainer';
+import OptionsPage from '../OptionsPage/OptionsPage';
 import PlaylistContainer from '../PlaylistContainer/PlaylistContainer';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -14,7 +16,7 @@ export default class App extends Component {
           userName: ''
         },
       isLoggedIn: false,
-      moods: ['Sad/Introspective', 'Happy/Energetic', 'Chill/Focused', 'Angry/Rebellious'],
+      moods: [{type: 'Sad/Introspective', id: 0, statement:'Let’s Let It Out' }, {type: 'Happy/Energetic', id: 1, statement: 'Let’s Get Hyped'}, {type: 'Chill/Focused', id: 2, statement:'Let’s Chill Out'}, {type: 'Angry/Rebellious', id: 3, statement: 'Let’s Rage' }],
       currentMood: '',
     }
   }
@@ -51,12 +53,20 @@ export default class App extends Component {
           </Route>
 
           <Route exact path='/home/:id/moods' render={({ match }) =>
-          <PlaylistContainer
-                            currentMood={this.state.currentMood}
-                            moodId={(parseInt(match.params.id))}
-                            />}
+            <OptionsPage
+                        allMoods={this.state.moods}
+                        currentMood={this.state.currentMood}
+                        moodId={(parseInt(match.params.id))}
+                        />}
 
-                            />
+                        />
+
+          <Route exact path='/home/playlist/:id/' render={({ match }) =>
+            <PlaylistContainer
+                        playlistId={(parseInt(match.params.id))}
+                        />}
+
+                        />
 
           <Route exact path='/' >
             <LoginPage setUserInfo={this.setUserInfo} />

@@ -3,7 +3,7 @@ import './PlaylistCard.css';
 
 const PlaylistCard = () => {
   return (
-
+    <h1>Howdy</h1>
   )
 }
 

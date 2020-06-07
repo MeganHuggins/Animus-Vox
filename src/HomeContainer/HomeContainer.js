@@ -3,9 +3,9 @@ import './HomeContainer.css';
 import HomeTabs from '../HomeTabs/HomeTabs';
 
 const HomeContainer = ({ setCurrentMood, moods, userInfo }) => {
-  const homeTabs = moods.map((mood, index) => {
+  const homeTabs = moods.map(mood => {
     return(
-      <HomeTabs key={index} setCurrentMood={setCurrentMood} mood={mood} index={index}/>
+      <HomeTabs key={mood.id} setCurrentMood={setCurrentMood} mood={mood} />
     )
   });
 
