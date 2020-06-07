@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './OptionsPage.css';
 import Header from '../Header/Header';
 
@@ -96,8 +97,8 @@ export default class OptionsPage extends Component {
         <div id={selectedOppositeMood.id} className='opposite-mood-section'>
           <h2 className='choice-header'>What does your soul need to hear right now?</h2>
           <div className='opposite-btn-selection'>
-            <Link to={`/home/playlist/${id}/`}>
-              <button id={selectedOppositeMood.id} className='current-opposite-btn' onClick={(e) => this.fetchPlaylist(e)}>{selectedOppositeMood.statement}</button>
+            <Link to={`/home/playlist/${selectedOppositeMood.id}/`}>
+              <button id={selectedOppositeMood.id} className='current-opposite-btn'>{selectedOppositeMood.statement}</button>
             </Link>
             <select value={this.state.value} className='drop-down-field' required type='select' onChange={(e) => this.handleOppositeChange(e)}>
               <option value=''></option>
@@ -106,7 +107,9 @@ export default class OptionsPage extends Component {
           </div>
         </div>
         <div id={this.state.currentMoodId} className='current-mood-section'>
-          <button id={this.state.currentMoodId} className='current-mood-btn' onClick={(e) => this.fetchPlaylist(e)}>Continue with how I’m feeling</button>
+          <Link to={`/home/playlist/${this.state.currentMoodId}/`}>
+            <button className='current-mood-btn'>Continue with how I’m feeling</button>
+          </Link>
         </div>
       </section>
       </>
