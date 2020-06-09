@@ -79,7 +79,7 @@ export default class App extends Component {
           <Route exact path='/home/playlist/:id/' render={({ match }) =>
             <PlaylistContainer
                         playlistId={(parseInt(match.params.id))}
-                        logOut={this.props.logOut}
+                        logOut={this.logOut}
                         resetCurrentMood={this.resetCurrentMood}
                         logOut={this.state.logOut}
                         />}

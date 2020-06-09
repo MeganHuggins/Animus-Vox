@@ -12,7 +12,6 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log('props', this.props);
     return (
       <header className='header'>
         <div className='logo-home-btn'>
