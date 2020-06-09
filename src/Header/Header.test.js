@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Header from './Header';
 import { MemoryRouter } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+
 
 describe('Header', () => {
   it('Should render a logo/ home and log out buttons', () => {
@@ -49,23 +49,5 @@ describe('Header', () => {
     fireEvent.click(homeBtn);
     expect(mockResetMood).toHaveBeenCalled();
   });
-
-  // it('Should bring the user back to the HomePage when the Home btn is clicked', () => {
-  //   const mockResetMood = jest.fn();
-  //   function renderWithRouter(
-  //     ui,
-  //     {route = '/', history = createMemoryHistory({initialEntries: [route]})} = {},
-  //     {initialState = {}, store = createStore(() => {}, initialState)} = {},
-  //   ) {
-  //     return {
-  //       ...render(
-  //         <Provider store={store}>
-  //           <Router history={history}>{ui}</Router>
-  //         </Provider>,
-  //       ),
-  //       history,
-  //       store,
-  //     }
-  //   };
 
 });

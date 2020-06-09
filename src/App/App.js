@@ -81,7 +81,6 @@ export default class App extends Component {
                         playlistId={(parseInt(match.params.id))}
                         logOut={this.logOut}
                         resetCurrentMood={this.resetCurrentMood}
-                        logOut={this.state.logOut}
                         />}
 
                         />
