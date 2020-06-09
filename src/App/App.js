@@ -14,7 +14,7 @@ export default class App extends Component {
         userInfo: {
           userName: ''
         },
-      isLoggedIn: true,
+      isLoggedIn: false,
       moods: [{type: 'Sad/Introspective', id: 0, statement:'Let’s Let It Out' }, {type: 'Happy/Energetic', id: 1, statement: 'Let’s Get Hyped'}, {type: 'Chill/Focused', id: 2, statement:'Let’s Chill Out'}, {type: 'Angry/Rebellious', id: 3, statement: 'Let’s Rage' }],
       currentMood: '',
     }
@@ -35,6 +35,20 @@ export default class App extends Component {
     });
   };
 
+  resetCurrentMood = () => {
+    this.setState({
+      currentMood: ''
+    })
+  }
+
+  logOut = () => {
+    this.setState({
+      userInfo: {
+        username: ''
+      },
+      isLoggedIn: false,
+    })
+  };
 
   render() {
     return (
@@ -56,6 +70,8 @@ export default class App extends Component {
                         allMoods={this.state.moods}
                         currentMood={this.state.currentMood}
                         moodId={(parseInt(match.params.id))}
+                        resetCurrentMood={this.resetCurrentMood}
+                        logOut={this.logOut}
                         />}
 
                         />
@@ -63,6 +79,7 @@ export default class App extends Component {
           <Route exact path='/home/playlist/:id/' render={({ match }) =>
             <PlaylistContainer
                         playlistId={(parseInt(match.params.id))}
+                        logOut={this.state.logOut}
                         />}
 
                         />

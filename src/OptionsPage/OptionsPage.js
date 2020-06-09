@@ -118,7 +118,10 @@ export default class OptionsPage extends Component {
 
     return (
       <>
-      <Header />
+      <Header
+      logOut={this.props.logOut}
+      resetCurrentMood={this.props.resetCurrentMood}
+      />
       <section style={{backgroundColor: mainColor}} className='options-container'>
         <div style={{background: oppositeColor}} id={selectedOppositeMood.id} className='opposite-mood-section'>
           <h2 className='choice-header'>What does your soul need to hear right now?</h2>
