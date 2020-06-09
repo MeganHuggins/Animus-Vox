@@ -76,14 +76,41 @@ export default class OptionsPage extends Component {
     this.filterOppositeMoods(this.props.allMoods, this.state.selectedOppositeMood);
   }
 
+  mainColorFinder = (id) => {
+    switch(id) {
+      case 0:
+        return 'rgba(58, 80, 107, 0.7)'
+      case 1:
+        return 'rgba(255, 188, 66, 0.7)'
+      case 2:
+        return 'rgba(174, 217, 224, 0.7)'
+      case 3 :
+        return 'rgba(232, 97, 99, 0.7)'
+      default:
+        return null;
+    };
+  }
 
-  backgroundImgFinder = (id) => {
-
+  oppositeColorFinder = (id) => {
+    switch(id) {
+      case 0:
+        return '#3A506B'
+      case 1:
+        return '#FFBC42'
+      case 2:
+        return '#AED9E0'
+      case 3 :
+        return '#E86163'
+      default:
+        return null;
+    };
   }
 
   render () {
-    const backgroundImg = this.backgroundImgFinder(this.props.moodId);
+    const selectedMood = this.props.moodId;
     const selectedOppositeMood = this.state.selectedOppositeMood;
+    const mainColor = this.mainColorFinder(this.props.moodId);
+    const oppositeColor = this.oppositeColorFinder(selectedOppositeMood.id)
     const otherOppositeMoods = this.state.otherOppositeMoods;
     const dropDownOptions = otherOppositeMoods.map(mood => {
       return <option key={mood.id} mood-id={mood.id} value={mood.statement}>{mood.type}</option>
@@ -92,8 +119,8 @@ export default class OptionsPage extends Component {
     return (
       <>
       <Header />
-      <section className='playlist-container'>
-        <div id={selectedOppositeMood.id} className='opposite-mood-section'>
+      <section style={{backgroundColor: mainColor}} className='options-container'>
+        <div style={{background: oppositeColor}} id={selectedOppositeMood.id} className='opposite-mood-section'>
           <h2 className='choice-header'>What does your soul need to hear right now?</h2>
           <div className='opposite-btn-selection'>
             <Link to={`/home/playlist/${selectedOppositeMood.id}/`}>
@@ -105,8 +132,8 @@ export default class OptionsPage extends Component {
             </select>
           </div>
         </div>
-        <div id={this.state.currentMoodId} className='current-mood-section'>
-          <Link to={`/home/playlist/${this.state.currentMoodId}/`}>
+        <div id={this.props.moodId} className='current-mood-section'>
+          <Link to={`/home/playlist/${this.props.moodId}/`}>
             <button className='current-mood-btn'>Continue with how I’m feeling</button>
           </Link>
         </div>
