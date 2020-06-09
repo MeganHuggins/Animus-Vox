@@ -23,7 +23,6 @@ export default class PlaylistContainer extends Component {
     fetchPlayList(playlistId)
       .then(data => {
         const updatedPlaylist = data.map(song => {
-          console.log('song', song);
           const urlArray = song.eId.match(/(?<=#https:\/\/).*?(?=\/stream)/g);
           console.log('urlArray', urlArray);
           return {

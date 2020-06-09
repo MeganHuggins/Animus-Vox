@@ -6,12 +6,12 @@ const PlaylistCard = ({ playlist }) => {
   const playlistName = playlist[0].pl.name;
   const playlistSongs = playlist.map(song => {
     return(
-      <SongCard key={song.uId} song={song}/>
+      <SongCard key={song._id} song={song}/>
     )
   });
 
   return (
-    <div className='playlist-cards-section'>
+    <div data-testid='playlist-card' className='playlist-cards-section'>
       <div className='quote-card'>
       </div>
       <div className='playlist-card'>

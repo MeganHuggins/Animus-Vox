@@ -127,7 +127,7 @@ export default class OptionsPage extends Component {
           <h2 className='choice-header'>What does your soul need to hear right now?</h2>
           <div className='opposite-btn-selection'>
             <Link to={`/home/playlist/${selectedOppositeMood.id}/`}>
-              <button id={selectedOppositeMood.id} className='current-opposite-btn'>{selectedOppositeMood.statement}</button>
+              <button data-testid='opposite-btn' id={selectedOppositeMood.id} className='current-opposite-btn'>{selectedOppositeMood.statement}</button>
             </Link>
             <select value={this.state.value} className='drop-down-field' required type='select' onChange={(e) => this.handleOppositeChange(e)}>
               <option value=''></option>
