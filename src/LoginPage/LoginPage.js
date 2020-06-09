@@ -25,10 +25,12 @@ export default class LoginPage extends Component {
   render() {
     return (
       <div className="login-container">
-        <h1 className="login-header">Animus Vox</h1>
-        <h3 className="sub-header">The Sound of the Soul</h3>
+        <div className="login-headers">
+          <h1 className="main-header">Animus Vox</h1>
+          <h3 className="sub-header">The Sound of the Soul</h3>
+        </div>
         <form onSubmit={(e) => this.handleLogIn(e)} className='login-form' action='#' method=''>
-          <input id='userName' onChange={(e) => this.handleUserInfo(e)} className='username' type='text' required placeholder='Name' value={this.state.value} />
+          <input id='user-name' onChange={(e) => this.handleUserInfo(e)} className='username' type='text' required placeholder='Name' value={this.state.value} />
           <button aria-label='submit' className='login-btn'>Enter</button>
         </form>
       </div>
