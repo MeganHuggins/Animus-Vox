@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './OptionsPage.css';
 import Header from '../Header/Header';
-import happyImg from './happy-background.jpeg'
 
 export default class OptionsPage extends Component {
   constructor(props) {
@@ -77,22 +76,6 @@ export default class OptionsPage extends Component {
     this.filterOppositeMoods(this.props.allMoods, this.state.selectedOppositeMood);
   }
 
-
-  backgroundImgFinder = (id) => {
-    switch(id) {
-      case 0:
-        return
-      case 1:
-        return happyImg
-      case 2:
-        return
-      case 3 :
-        return
-      default:
-        return null;
-    };
-  }
-
   mainColorFinder = (id) => {
     switch(id) {
       case 0:
@@ -126,7 +109,6 @@ export default class OptionsPage extends Component {
   render () {
     const selectedMood = this.props.moodId;
     const selectedOppositeMood = this.state.selectedOppositeMood;
-    const backgroundImg = this.backgroundImgFinder(this.props.moodId);
     const mainColor = this.mainColorFinder(this.props.moodId);
     const oppositeColor = this.oppositeColorFinder(selectedOppositeMood.id)
     const otherOppositeMoods = this.state.otherOppositeMoods;
@@ -137,7 +119,7 @@ export default class OptionsPage extends Component {
     return (
       <>
       <Header />
-      <section style={{background: mainColor}} className='options-container'>
+      <section style={{backgroundColor: mainColor}} className='options-container'>
         <div style={{background: oppositeColor}} id={selectedOppositeMood.id} className='opposite-mood-section'>
           <h2 className='choice-header'>What does your soul need to hear right now?</h2>
           <div className='opposite-btn-selection'>
@@ -150,7 +132,7 @@ export default class OptionsPage extends Component {
             </select>
           </div>
         </div>
-        <div style={{background: `url(${backgroundImg})`}} id={this.props.moodId} className='current-mood-section'>
+        <div id={this.props.moodId} className='current-mood-section'>
           <Link to={`/home/playlist/${this.props.moodId}/`}>
             <button className='current-mood-btn'>Continue with how I’m feeling</button>
           </Link>

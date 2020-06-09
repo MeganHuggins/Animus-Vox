@@ -4,37 +4,57 @@
   display: flex;
 }
 
+.options-container::after {
+  background-image: url('./happy-background.jpg');
+}
+
 .opposite-mood-section {
   float: left;
   clip-path: polygon(0 0, 0 870px, 1290px -100px);
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .choice-header {
-
+  background: rgba(255, 255, 255, 0.4);
+  width: 55%;
+  height: 20%;
+  font-size: 48px;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .opposite-btn-selection {
 
 }
 
-.current-opposite-btn {
-
+.current-opposite-btn, .current-mood-btn {
+  text-transform: capitalize;
+  width: 330px;
+  margin: 30px 25px;
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  font-size: 40px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .drop-down-field {
-
+  width: 18px;
+  background: transparent;
+  border: none;
 }
 
 .current-mood-section {
-  /* float: right;
-  clip-path: polygon(200px 300px, 300px 300px, 300px 0, 0 0); background: #AED9E0;
-  height: 95vh;
-  width: 100vw;
-  background: rgba(255, 188, 66, 0.7); */
+
 }
 
 .current-mood-btn {
-
+  position: absolute;
+  top: 70px;
+  right: 0;
 }
