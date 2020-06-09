@@ -1,0 +1,16 @@
+#mood-btns {
+  position: relative;
+  bottom: 80px;
+  width: 250px;
+  height: 80px;
+  background: #ffffff;
+  margin-top: 1px;
+  transition: width 0.5s ease;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+#mood-btns:hover {
+  width: 360px;
+}

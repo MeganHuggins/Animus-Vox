@@ -1,0 +1,38 @@
+* {
+  font-family: 'Miriam Libre', sans-serif;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.home-container {
+  background: url('./home-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting-section, .tab-sections {
+  height: 50%;
+}
+
+.greeting-section {
+  background: rgba(95, 177, 164, 0.5);
+  padding: 20px 50px;
+}
+
+.main-greeting {
+  font-size: 96px;
+}
+
+.sub-greeting {
+  font-size: 40px;
+  width: 30%;
+}
+
+.tab-sections {
+  display: flex;
+  justify-content: space-between;
+}

@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const HomeTabs = ({ setCurrentMood, mood, index } ) => {
   const { type, id } = mood;
   return (
-    <div className='tab-section'>
+    <>
       <Link to={`/home/${id}/moods`}>
-        <button onClick={(e) => setCurrentMood(type)}
+        <button id='mood-btns' onClick={(e) => setCurrentMood(type)}
         className='mood-tab'>{type}</button>
       </Link>
-    </div>
+    </>
   );
 }
 
