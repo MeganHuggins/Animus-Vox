@@ -34,18 +34,40 @@ export default class PlaylistContainer extends Component {
       .catch(error => console.error(error));
   }
 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     this._isMounted = false;
   }
 
+  backgroundColorFinder = (id) => {
+    switch(id) {
+      case 0:
+        return '#3A506B'
+      case 1:
+        return '#FFBC42'
+      case 2:
+        return '#AED9E0'
+      case 3 :
+        return '#E86163'
+      default:
+        return null;
+    };
+  }
+
   render() {
+    const playlistColor = this.backgroundColorFinder(this.state.playlistId);
+
     return (
       <>
-      <Header />
-      <section className='playlist-continer'>
+      <Header
+      logOut={this.props.logOut}
+      resetCurrentMood={this.props.resetCurrentMood}
+      />
+      <section className='main-playlist-container'>
+        <div style={{backgroundColor: playlistColor}} className='playlist-container'>
         {this.state.playlist.length &&
           <PlaylistCard playlist={this.state.playlist}/>
         }
+        </div>
       </section>
       </>
     )
