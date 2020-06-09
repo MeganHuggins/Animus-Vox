@@ -1,0 +1,40 @@
+.options-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.opposite-mood-section {
+  float: left;
+  clip-path: polygon(0 0, 0 870px, 1290px -100px);
+  height: 100vh;
+  width: 100vw;
+}
+
+.choice-header {
+
+}
+
+.opposite-btn-selection {
+
+}
+
+.current-opposite-btn {
+
+}
+
+.drop-down-field {
+
+}
+
+.current-mood-section {
+  /* float: right;
+  clip-path: polygon(200px 300px, 300px 300px, 300px 0, 0 0); background: #AED9E0;
+  height: 95vh;
+  width: 100vw;
+  background: rgba(255, 188, 66, 0.7); */
+}
+
+.current-mood-btn {
+
+}
