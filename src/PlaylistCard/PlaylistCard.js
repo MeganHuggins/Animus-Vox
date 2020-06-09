@@ -15,7 +15,7 @@ const PlaylistCard = ({ playlist }) => {
       <div className='quote-card'>
       </div>
       <div className='playlist-card'>
-        <h2>{playlistName}</h2>
+        <h2 className='playlist-name'>{playlistName}</h2>
           {playlistSongs}
       </div>
     </div>

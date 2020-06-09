@@ -1,0 +1,10 @@
+.main-playlist-container {
+
+}
+
+.playlist-container {
+  height: 50vh;
+  opacity: 85%;
+  display: flex;
+  justify-content: center;
+}
