@@ -8,7 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background: url('./home-background.jpg');
+  background-image: url('./home-background.jpg');
   display: flex;
   flex-direction: column;
   height: 100vh;
