@@ -31,10 +31,10 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 70%;
-  right: 4%;
   height: 100px;
+  position: relative;
+  right: 4%;
+  top: 70%;
 }
 
 #user-name, .login-btn {
@@ -45,9 +45,9 @@
 
 
 #user-name {
-  width: 280px;
-  margin-bottom: 30px;
   border-bottom: 1px solid black;
+  margin-bottom: 30px;
+  width: 280px;
 }
 
 .login-btn {

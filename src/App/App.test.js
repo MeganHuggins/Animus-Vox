@@ -1,19 +1,16 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 import { MemoryRouter, Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
 
 describe('App', () => {
 
   it('should load the LoginPage on startup', async () => {
-    const history = createMemoryHistory()
-    history.push('/')
     const { getByText, getByPlaceholderText } = render(
-      <Router history={history}>
+      <MemoryRouter>
         <App />
-      </Router>
+      </MemoryRouter>
     );
     await waitFor(() => {
       expect(getByText('Animus Vox')).toBeInTheDocument();
@@ -23,40 +20,49 @@ describe('App', () => {
     });
   });
 
+  it('Should load the Home Page once the user inputs their log info', async () => {
+    const { getByText, getByPlaceholderText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    const login = getByText('Enter');
+
+    await waitFor(() => {
+      fireEvent.change(getByPlaceholderText('Name'), {
+        target: { value: 'Megan' }
+      });
+    });
+    fireEvent.click(login);
+
+    const homeHeader = getByText('Hello, Megan');
+    expect(homeHeader).toBeInTheDocument();
+  });
+
+  it('Should load the OptionsPage with the current mood and opposite mood once the user selects their current mood', async () => {
+    const { getByText, getByPlaceholderText } = render(
+      <MemoryRouter >
+        <App />
+      </MemoryRouter>
+    );
+    const login = getByText('Enter');
+
+    await waitFor(() => {
+      fireEvent.change(getByPlaceholderText('Name'), {
+        target: { value: 'Megan' }
+      });
+    });
+    fireEvent.click(login);
+
+    await waitFor(() => {
+      fireEvent.click(getByText('Happy/Energetic'));
+    });
+
+    const currentMood = getByText('Continue with how I’m feeling');
+    const oppositeMood = getByText('Let’s Chill Out');
+
+    expect(currentMood).toBeInTheDocument();
+    expect(oppositeMood).toBeInTheDocument();
+  });
+
 });
-
-// it('Should place the names of all the moods passed in', () => {
-  //     const mood = [{type: 'Sad/Introspective', id: 0, statement:'Let’s Let It Out' }];
-  //     const { getByText } = render(
-    //       <MemoryRouter>
-    //         <App mood={mood} />
-    //       </MemoryRouter>
-    //     );
-    //     const sadTab = getByText('Sad/Introspective');
-    //     const happyTab = getByText('Happy/Energetic');
-    //     const calmTab = getByText('Chill/Focused');
-    //     const angryTab = getByText('Angry/Rebellious');
-    //
-    //     expect(happyTab).toBeInTheDocument;
-    //     expect(calmTab).toBeInTheDocument;
-    //     expect(sadTab).toBeInTheDocument;
-    //     expect(angryTab).toBeInTheDocument;
-    // });
-
-// it('Should bring the user back to the HomePage when the Home btn is          clicked', () => {
-//   const mockResetMood = jest.fn();
-//   function renderWithRouter(
-//     ui,
-//     {route = '/', history = createMemoryHistory({initialEntries: [route]})} = {},
-//     {initialState = {}, store = createStore(() => {}, initialState)} = {},
-//   ) {
-//     return {
-//       ...render(
-//         <Provider store={store}>
-//           <Router history={history}>{ui}</Router>
-//         </Provider>,
-//       ),
-//       history,
-//       store,
-//     }
-//   };
