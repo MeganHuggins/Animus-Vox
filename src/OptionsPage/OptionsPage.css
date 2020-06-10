@@ -10,7 +10,7 @@
 }
 
 .opposite-mood-section {
-  clip-path: polygon(0 0, 0 870px, 1290px -100px);
+  clip-path: polygon(0 0, 0 900px, 1390px -90px);
   display: flex;
   flex-direction: column;
   float: left;
@@ -27,7 +27,7 @@
   text-align: center;
   text-transform: capitalize;
   top: 15px;
-  width: 55%;
+  width: 50%;
 }
 
 .current-opposite-btn, .current-mood-btn {
@@ -38,12 +38,14 @@
   font-size: 40px;
   margin: 30px 25px;
   text-transform: capitalize;
-  width: 330px;
+  width: 310px;
 }
 
 .drop-down-field {
   background: transparent;
   border: none;
+  position: relative;
+  right: 30px;
   width: 18px;
 }
 
@@ -51,4 +53,9 @@
   position: absolute;
   right: 10px;
   top: 90px;
+}
+
+.current-opposite-btn {
+  position: relative;
+  right: 10px;
 }
