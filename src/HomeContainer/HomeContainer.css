@@ -5,13 +5,13 @@
 }
 
 .home-container {
-  background: url('./home-background.jpg');
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
-  height: 100vh;
+  background: url('./home-background.jpg');
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .greeting-section, .tab-sections {

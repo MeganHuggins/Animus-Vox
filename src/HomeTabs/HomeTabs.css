@@ -1,14 +1,14 @@
 #mood-btns {
-  position: relative;
-  bottom: 80px;
-  width: 250px;
-  height: 80px;
   background: #ffffff;
-  margin-top: 1px;
-  transition: width 0.5s ease;
+  bottom: 80px;
   font-size: 24px;
-  text-align: left;
+  height: 80px;
+  margin-top: 1px;
   padding-left: 15px;
+  position: relative;
+  text-align: left;
+  transition: width 0.5s ease;
+  width: 250px;
 }
 
 #mood-btns:hover {

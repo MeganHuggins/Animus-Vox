@@ -4,63 +4,51 @@
 }
 
 .options-container {
+  display: flex;
   height: 100vh;
   width: 100vw;
-  display: flex;
-}
-
-.options-container::after {
-  background-image: url('./happy-background.jpg');
 }
 
 .opposite-mood-section {
-  float: left;
   clip-path: polygon(0 0, 0 870px, 1290px -100px);
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
+  float: left;
+  height: 100vh;
   justify-content: space-around;
+  width: 100vw;
 }
 
 .choice-header {
   background: rgba(255, 255, 255, 0.4);
-  width: 55%;
-  height: 20%;
   font-size: 48px;
-  text-transform: capitalize;
-  text-align: center;
+  height: 20%;
   position: relative;
+  text-align: center;
+  text-transform: capitalize;
   top: 15px;
-}
-
-.opposite-btn-selection {
-
+  width: 55%;
 }
 
 .current-opposite-btn, .current-mood-btn {
+  background: transparent;
+  border-bottom: 1px solid black;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  margin: 30px 25px;
   text-transform: capitalize;
   width: 330px;
-  margin: 30px 25px;
-  border: none;
-  border-bottom: 1px solid black;
-  background: transparent;
-  font-size: 40px;
-  cursor: pointer;
 }
 
 .drop-down-field {
-  width: 18px;
   background: transparent;
   border: none;
-}
-
-.current-mood-section {
-
+  width: 18px;
 }
 
 .current-mood-btn {
   position: absolute;
-  top: 90px;
   right: 10px;
+  top: 90px;
 }
