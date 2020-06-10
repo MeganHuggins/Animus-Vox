@@ -1,68 +1,58 @@
+## Animus Vox
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Animus Vox is an app that allows the user for them to tell how they are currently feeling. From there they will be meet with the option to either find music that continues with their current mood or go an opposite direction. For example, if the user states that they are currently feeling sad will be given the option to find 'sad' or emotional songs (because sometimes all we want to do when you're sad is listen to ad songs and cry and dance!) they are also given the option to find 'happy' music first off. The opposite mood choice is made itinially for the user but they have the opition to change the option mood at anytime while on the Opposite Page. Once a user selects which direction they want to go, music wise, they will be redirected to a playlist that is pulled down from the Openwhyd API. 
 
-## Available Scripts
+### Learning Goals
+1. Demonstrate the mastery of the following technologies:
+    - React
+    - Testing-Library/React
+    - Router
+    - Asynchronous JavaScript
+2. Work within constraints to deliver a unique product for your audience which helps them in some way. Your project must utilize your assigned API and technology, and must be built for your assigned audience.
+3. Your applications should have the following core functionality:
+Display the data from the API in a way that applies directly to your audience
+Create a one of kind of App in React within the time frame as a solo project
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+##### Librarys, Frameworks
+- JavaScript
+- React
+- CSS
+- Create React App
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Testing and Styling
+- Jest
+- React Testing Library
+- ESLINT
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+##### APIS
+- Fetch
 
-### `npm test`
+## Instructions
+- Fork or Clone repo
+- Run `npm install`
+- In the terminal navigate to the directory and run `npm start`
+- To run tests, run `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Future Work
+- Add functionality for a user to add/favorite certain songs to their own personal playlists on the site
+- Have more options, in terms of different playlists, readily available to them 
+- Add more visual friendly elemetns on the Options Page 
+- Implement a loading page for when the songs are in the process of coming over
 
-### `npm run build`
+## Animus Vox In Action 
+### Loging Into Site:
+![anium-vox-gif](https://media.giphy.com/media/YnkJnzi8NpdJuQ8Asz/giphy.gif)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setting Users Initial Mood:
+![anium-vox-gif](https://media.giphy.com/media/XftZcixSqD6Nkd1FU4/giphy.gif)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Filtering Through Opposite Moods:
+![anium-vox-gif](https://media.giphy.com/media/KbMzwR0XQR8ifMtxyZ/giphy.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Fetching Desired Playlist: 
+![anium-vox-gif](https://media.giphy.com/media/TjAAHRITKao6y9so1O/giphy.gif)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Returning Home To Start A New Search: 
+![anium-vox-gif](https://media.giphy.com/media/h4xt6IEkwhUtj3WaDw/giphy.gif)
